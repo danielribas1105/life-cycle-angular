@@ -17,7 +17,7 @@ export class ListaDeCompraService {
   }
 
   criarItem(nomeItem: string) {
-    const id = this.listaDeCompra.length;
+    const id = this.listaDeCompra.length + 1;
     const item: Item = {
       id: id,
       nome: nomeItem,
