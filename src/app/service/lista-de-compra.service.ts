@@ -46,8 +46,20 @@ export class ListaDeCompraService {
     return item;
   }
 
+  editarItemNaLista(itemAnterior: Item, nomeEditadoDoItem: string) {
+    const itemEditado: Item = {
+      id: itemAnterior.id,
+      nome: nomeEditadoDoItem,
+      data: new Date().toLocaleString('pt-BR'),
+      comprado: itemAnterior.comprado
+    }
+    const id = itemAnterior.id;
+    this.listaDeCompra.splice(Number(id)-1, 1, itemEditado);
+  }
+
   adicionarItemNaLista(nomeItem: string) {
     const item = this.criarItem(nomeItem);
     this.listaDeCompra.push(item);
   }
+
 }
