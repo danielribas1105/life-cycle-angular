@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-item',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
+  faPen = faPen;
+  faTrash = faTrash
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
