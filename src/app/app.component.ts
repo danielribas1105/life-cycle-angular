@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Item } from './interfaces/iItem';
+import { ListaDeCompraService } from './service/lista-de-compra.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app-lista-de-compras';
+  listaCompras!: Array<Item>;
 
-  constructor() { }
+  constructor(
+    private service: ListaDeCompraService
+  ) { }
+
+  ngOnInit(): void {
+      this.listaCompras = this.service.getListaDeCompra();
+      console.log(this.listaCompras);
+  }
 }
